@@ -169,7 +169,7 @@ while True:
         y = random.randint(-290, 290)
         mâncare1.goto(x,y)
 
-            # Adăugare segment
+        # Adăugare segment
         element_nou = turtle.Turtle()
         element_nou.speed(0)
         element_nou.shape("circle")
@@ -191,7 +191,7 @@ while True:
         y = random.randint(-290, 290)
         mâncare2.goto(x,y)
 
-            # Adăugare segment
+        # Adăugare segment
         element_nou = turtle.Turtle()
         element_nou.speed(0)
         element_nou.shape("circle")
