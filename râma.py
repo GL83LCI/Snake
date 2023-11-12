@@ -1,5 +1,3 @@
-# By Lucian
-
 import turtle
 import time
 import random
@@ -13,12 +11,12 @@ scor_maxim = 0
 # Creare tabel
 
 wn = turtle.Screen()
-wn.title("Râma by Lucian")
+wn.title("Worm by Lucian")
 wn.bgcolor("blue")
 wn.setup(width=600, height=600)
 wn.tracer(0) # Oprire screen updates
 
-# Capul râmei
+# Capul ramei
 
 cap = turtle.Turtle()
 cap.speed()
@@ -28,27 +26,27 @@ cap.penup()
 cap.goto(0,0)
 cap.direction = "stop"
 
-# Mâncare
-mâncare = turtle.Turtle()
-mâncare.speed()
-mâncare.shape("circle")
-mâncare.color("black")
-mâncare.penup()
-mâncare.goto(0,100)
+# Mancare
+mancare = turtle.Turtle()
+mancare.speed()
+mancare.shape("circle")
+mancare.color("black")
+mancare.penup()
+mancare.goto(0,100)
 
-mâncare1 = turtle.Turtle()
-mâncare1.speed()
-mâncare1.shape("triangle")
-mâncare1.color("green")
-mâncare1.penup()
-mâncare1.goto(0,100)
+mancare1 = turtle.Turtle()
+mancare1.speed()
+mancare1.shape("triangle")
+mancare1.color("green")
+mancare1.penup()
+mancare1.goto(0,100)
 
-mâncare2 = turtle.Turtle()
-mâncare2.speed()
-mâncare2.shape("square")
-mâncare2.color("red")
-mâncare2.penup()
-mâncare2.goto(0,100)
+mancare2 = turtle.Turtle()
+mancare2.speed()
+mancare2.shape("square")
+mancare2.color("red")
+mancare2.penup()
+mancare2.goto(0,100)
 
 elemente = []
 
@@ -63,7 +61,7 @@ chenar.hideturtle()
 chenar.goto(0, 260)
 chenar.write("Scor: 0  Scor Maxim: 0", align="center", font=("Arial", 14, "italic"))
 
-# Direcții
+# Directii
 
 def go_up():
     if cap.direction != "down":
@@ -98,7 +96,7 @@ def move():
         x = cap.xcor()
         cap.setx(x + 20)
 
-# Legături direcții
+# Legaturi directii
 
 wn.listen()
 wn.onkeypress(go_up, "w")
@@ -111,19 +109,19 @@ wn.onkeypress(go_right, "d")
 while True:
     wn.update()
 
-    # Lovirea de pereți
+    # Lovirea de pereti
 
     if cap.xcor()>290 or cap.xcor()<-290 or cap.ycor()>290 or cap.ycor()<-290:
         time.sleep(1)
         cap.goto(0,0)
         cap.direction = "stop"
 
-        # Ascundere elemente râmă
+        # Ascundere elemente rama
 
         for element in elemente:
             element.goto(1000, 1000)
         
-        # Ștergere elemente râmă
+        # Stergere elemente rama
 
         elemente.clear()
 
@@ -137,17 +135,18 @@ while True:
         chenar.write("Scor: {}  Scor Maxim: {}".format(scor, scor_maxim), align="center", font=("Arial", 14, "italic")) 
 
 
-    # Mâncarea elementului de râmă
+    # Mancarea elementului de rama
 
-    if cap.distance(mâncare) < 20:
+    if cap.distance(mancare) < 20:
 
-        # Adăugare mâncare aleatoriu în tabel
+        # Adaugare mancare aleatoriu in tabel
 
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
-        mâncare.goto(x,y)
+        mancare.goto(x,y)
 
-        # Adăugare segment
+        # Adaugare segment
+
         element_nou = turtle.Turtle()
         element_nou.speed(0)
         element_nou.shape("circle")
@@ -158,18 +157,19 @@ while True:
         # Reducere delay
         delay -= 0.001
 
-        # Creștere scor
+        # Crestere scor
         scor += 1
 
-    if cap.distance(mâncare1) < 20:
+    if cap.distance(mancare1) < 20:
 
-        # Adăugare mâncare aleatoriu în tabel
+        # Adaugare mancare aleatoriu in tabel
 
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
-        mâncare1.goto(x,y)
+        mancare1.goto(x,y)
 
-        # Adăugare segment
+        # Adaugare segment
+
         element_nou = turtle.Turtle()
         element_nou.speed(0)
         element_nou.shape("circle")
@@ -180,18 +180,18 @@ while True:
         # Reducere delay
         delay -= 0.001
 
-        # Creștere scor
+        # Crestere scor
         scor += 5
 
-    if cap.distance(mâncare2) < 20:
+    if cap.distance(mancare2) < 20:
         
-        # Adăugare mâncare aleatoriu în tabel
+        # Adaugare mancare aleatoriu in tabel
 
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
-        mâncare2.goto(x,y)
+        mancare2.goto(x,y)
 
-        # Adăugare segment
+            # Adaugare segment
         element_nou = turtle.Turtle()
         element_nou.speed(0)
         element_nou.shape("circle")
@@ -202,7 +202,7 @@ while True:
         # Reducere delay
         delay -= 0.001
 
-        # Creștere scor
+        # Crestere scor
         scor += 10
 
         if scor > scor_maxim :
@@ -227,7 +227,7 @@ while True:
 
     move()    
 
-    # Impact cap-coadă
+    # Impact cap-coada
 
     for segment in elemente:
         if segment.distance(cap) < 20:
@@ -240,7 +240,7 @@ while True:
             for element in elemente:
                 element.goto(1000, 1000)
         
-            # Ștergere segmente
+            # Stergere segmente
             elemente.clear()
 
             # Resetare scor
