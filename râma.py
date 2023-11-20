@@ -34,20 +34,6 @@ mancare.color("black")
 mancare.penup()
 mancare.goto(0,100)
 
-mancare1 = turtle.Turtle()
-mancare1.speed()
-mancare1.shape("triangle")
-mancare1.color("green")
-mancare1.penup()
-mancare1.goto(0,100)
-
-mancare2 = turtle.Turtle()
-mancare2.speed()
-mancare2.shape("square")
-mancare2.color("red")
-mancare2.penup()
-mancare2.goto(0,100)
-
 elemente = []
 
 # Chenar 
@@ -159,52 +145,7 @@ while True:
 
         # Crestere scor
         scor += 1
-
-    if cap.distance(mancare1) < 20:
-
-        # Adaugare mancare aleatoriu in tabel
-
-        x = random.randint(-290, 290)
-        y = random.randint(-290, 290)
-        mancare1.goto(x,y)
-
-        # Adaugare segment
-
-        element_nou = turtle.Turtle()
-        element_nou.speed(0)
-        element_nou.shape("circle")
-        element_nou.color("yellow")
-        element_nou.penup()
-        elemente.append(element_nou)
-
-        # Reducere delay
-        delay -= 0.001
-
-        # Crestere scor
-        scor += 5
-
-    if cap.distance(mancare2) < 20:
-        
-        # Adaugare mancare aleatoriu in tabel
-
-        x = random.randint(-290, 290)
-        y = random.randint(-290, 290)
-        mancare2.goto(x,y)
-
-            # Adaugare segment
-        element_nou = turtle.Turtle()
-        element_nou.speed(0)
-        element_nou.shape("circle")
-        element_nou.color("yellow")
-        element_nou.penup()
-        elemente.append(element_nou)
-
-        # Reducere delay
-        delay -= 0.001
-
-        # Crestere scor
-        scor += 10
-
+   
         if scor > scor_maxim :
             scor_maxim = scor
         
